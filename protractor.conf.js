@@ -37,10 +37,11 @@ exports.config = {
     //     },
 
     multiCapabilities:  [{
-    //     browserName: 'firefox'
-    // }, {
+        browserName: 'firefox'
+    }, {
         browserName: 'chrome'
-
+    // // }, {
+    //     browserName: 'safari'
     }],
 
         // execute tests using 2 browsers running in parallel
