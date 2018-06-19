@@ -3,8 +3,8 @@ exports.config = {
     framework: 'custom',
 
     // Selenium grid
-    //directConnect: true,
-    //seleniumAddress: 'http://localhost:4444/wd/hub',
+    directConnect: false,
+    seleniumAddress: 'http://selenium-hub:4444/wd/hub',
 
     // To get the awesome Serenity BDD reports, replace this entry:
     // frameworkPath: require.resolve('protractor-cucumber-framework'),
@@ -26,27 +26,17 @@ exports.config = {
         format:     'pretty'
     },
 
-    // capabilities: {
-    //     browserName: 'chrome',
-    //     chromeOptions: {
-    //         args: [
-    //             // 'incognito',
-    //             // 'disable-extensions',
-    //             // 'show-fps-counter=true'
-    //         ]
-    //     },
-
     multiCapabilities:  [{
-        browserName: 'firefox'
-    }, {
+        browserName: 'firefox',
+        'moz:firefoxOptions': {
+            'args': ['--headless']
+        }
+     }, {
         browserName: 'chrome'
-    // // }, {
-    //     browserName: 'safari'
     }],
-
-        // execute tests using 2 browsers running in parallel
-        shardTestFiles: true,
-        maxInstances: 1,
+    // execute tests using 2 browsers running in parallel
+    shardTestFiles: true,
+    maxInstances: 1,
 
 
     restartBrowserBetweenTests: false

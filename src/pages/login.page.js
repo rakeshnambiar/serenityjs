@@ -14,7 +14,7 @@ const loginPage = function() {
 
     po.openApp = function() {
         browser.get('/accounts/login');
-        browser.manage().window().maximize();
+        //browser.manage().window().maximize();
     };
 
     po.performSearch = function (keyword){
