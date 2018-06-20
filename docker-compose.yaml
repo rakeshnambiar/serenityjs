@@ -18,6 +18,8 @@ services:
           - 5910:5910
     firefox:
         image: selenium/node-firefox
+        volumes:
+          - /dev/shm:/dev/shm
         depends_on:
           - selenium-hub
         restart: always

@@ -26,6 +26,16 @@ exports.config = {
         format:     'pretty'
     },
 
+    // To execute in single browser
+
+    //capabilities: {
+      //'browserName': 'firefox',
+       //'moz:firefoxOptions': {
+          //'args': ['--headless','--shm-size=2g']
+      // }
+    //},
+
+    // To execute the Tests in parallel on multiple-browser
     multiCapabilities:  [{
         browserName: 'firefox',
         'moz:firefoxOptions': {
