@@ -1,10 +1,12 @@
 ---Pre-condition ----
-NodeJS
-NPM 
 
+Docker 
+Docker-compose
 
-How to execute the tests:
+Have a look at the /script/protractor.config before execute the test
 
-npm install
+command to run:
+docker-compose up -d
 
-npm test
+once the execution done:
+docker-compose down
