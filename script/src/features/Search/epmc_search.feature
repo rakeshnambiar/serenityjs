@@ -4,7 +4,7 @@ Feature: Europe PMC Sanity Test Scenarios
   As as researcher
   I should have the provision on the home page
 
-  @TC01_EPMC_RegressionTest
+  @TC01_EPMC_RegressionTest   @RegressionTest
   Scenario: To check the 'Author search'
 
     Given I am a new User

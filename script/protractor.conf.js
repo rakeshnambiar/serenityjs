@@ -3,8 +3,8 @@ exports.config = {
     framework: 'custom',
 
     // Selenium grid
-    directConnect: false,
-    seleniumAddress: 'http://selenium-hub:4444/wd/hub',
+    directConnect: true,
+    //seleniumAddress: 'http://selenium-hub:4444/wd/hub',
 
     // To get the awesome Serenity BDD reports, replace this entry:
     // frameworkPath: require.resolve('protractor-cucumber-framework'),
@@ -23,7 +23,8 @@ exports.config = {
     specs: [ 'src/features/**/*.feature' ],
     cucumberOpts: {
         require:    [ 'src/**/*.js' ],
-        format:     'pretty'
+        format:     'pretty',
+        tags:       ['@RegressionTest']
     },
 
     // To execute in single browser
@@ -36,12 +37,13 @@ exports.config = {
     //},
 
     // To execute the Tests in parallel on multiple-browser
-    multiCapabilities:  [{
+    multiCapabilities:  [
+/*        {
         browserName: 'firefox',
         'moz:firefoxOptions': {
             'args': ['--headless']
         }
-     }, {
+     },*/ {
         browserName: 'chrome'
     }],
     // execute tests using 2 browsers running in parallel
