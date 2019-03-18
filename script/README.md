@@ -10,3 +10,8 @@ docker-compose up -d
 
 once the execution done:
 docker-compose down
+
+Test execution video
+--------------------------------
+
+available in the /target folder

@@ -3,8 +3,8 @@ exports.config = {
     framework: 'custom',
 
     // Selenium grid
-    directConnect: true,
-    //seleniumAddress: 'http://selenium-hub:4444/wd/hub',
+    directConnect: false,
+    seleniumAddress: 'http://zalenium:4444/wd/hub',
 
     // To get the awesome Serenity BDD reports, replace this entry:
     // frameworkPath: require.resolve('protractor-cucumber-framework'),
