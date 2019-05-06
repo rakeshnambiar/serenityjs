@@ -3,8 +3,8 @@ exports.config = {
     framework: 'custom',
 
     // Selenium grid
-    directConnect: false,
-    seleniumAddress: 'http://zalenium:4444/wd/hub',
+      directConnect: false,
+      seleniumAddress: 'http://zalenium:4444/wd/hub',
 
     // To get the awesome Serenity BDD reports, replace this entry:
     // frameworkPath: require.resolve('protractor-cucumber-framework'),
@@ -16,7 +16,7 @@ exports.config = {
 
     // -----------------------------------------------------------------------------------------------------------------
 
-    baseUrl: 'http://europepmc.org',
+    baseUrl: 'https://europepmc.org',
 
     allScriptsTimeout: 110000,
 
@@ -24,32 +24,19 @@ exports.config = {
     cucumberOpts: {
         require:    [ 'src/**/*.js' ],
         format:     'pretty',
-        tags:       ['@RegressionTest']
+        tags:       ['~@ignore', '@RegressionTest']
     },
 
-    // To execute in single browser
-
-    //capabilities: {
-      //'browserName': 'firefox',
-       //'moz:firefoxOptions': {
-          //'args': ['--headless','--shm-size=2g']
-      // }
-    //},
-
-    // To execute the Tests in parallel on multiple-browser
-    multiCapabilities:  [
-/*        {
-        browserName: 'firefox',
-        'moz:firefoxOptions': {
-            'args': ['--headless']
-        }
-     },*/ {
-        browserName: 'chrome'
+    multiCapabilities:  [{
+    //     browserName: 'firefox'
+    // }, {
+        browserName: 'firefox'
     }],
-    // execute tests using 2 browsers running in parallel
-    shardTestFiles: true,
-    maxInstances: 1,
+
+        // execute tests using 2 browsers running in parallel
+        shardTestFiles: true,
+        maxInstances: 1,
 
 
-    restartBrowserBetweenTests: false
+    restartBrowserBetweenTests: true
 };
