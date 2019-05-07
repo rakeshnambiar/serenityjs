@@ -16,7 +16,7 @@ exports.config = {
 
     // -----------------------------------------------------------------------------------------------------------------
 
-    baseUrl: 'https://europepmc.org',
+    baseUrl: 'https://beta.europepmc.org',
 
     allScriptsTimeout: 110000,
 
