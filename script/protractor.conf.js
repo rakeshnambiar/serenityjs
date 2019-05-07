@@ -28,9 +28,12 @@ exports.config = {
     },
 
     multiCapabilities:  [{
-    //     browserName: 'firefox'
-    // }, {
-        browserName: 'firefox'
+           browserName: 'firefox',
+            'moz:firefoxOptions': {
+                'args': ['acceptInsecureCerts=true']
+            }
+         }, {
+           browserName: 'chrome'
     }],
 
         // execute tests using 2 browsers running in parallel
@@ -38,5 +41,5 @@ exports.config = {
         maxInstances: 1,
 
 
-    restartBrowserBetweenTests: true
+    restartBrowserBetweenTests: false
 };
