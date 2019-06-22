@@ -1,3 +1,4 @@
+whoami
 docker-compose down
 docker-compose up -d selenium zalenium 
 docker-compose up --exit-code-from nodeSetup
