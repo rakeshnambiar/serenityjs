@@ -11,9 +11,10 @@ const searchResultsPage = function() {
      * @return {boolean}
      */
     po.IsSearchResultsAvailable = async () => {
-        await await browser.driver.sleep(2000);
+        await browser.driver.sleep(2000);
         if (await browser.element(po.Results_Header).isPresent()) {
-            return await browser.element.all(po.Results_Item).getSize() > 0;
+            let results = await browser.element.all(po.Results_Item).getSize();
+            return results.length > 0;
         } else{
             return false;
         }

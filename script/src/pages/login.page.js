@@ -12,18 +12,20 @@ const loginPage = function() {
 
     po.Login_Button = by.css('button[type=\'submit\']');
 
-    po.openApp = function() {
-        browser.get('/accounts/login');
-        //browser.manage().window().maximize();
+    po.openApp = async() => {
+        await browser.get('/accounts/login');
+        await browser.manage().window().maximize();
     };
 
-    po.performSearch = function (keyword){
-        browser.element(po.Search_Input).sendKeys(keyword.toString());
-        browser.element(po.Search_Button).click();
+    po.performSearch = async (keyword) => {
+        await browser.element(po.Search_Input).clear();
+        await browser.sleep(500);
+        await browser.element(po.Search_Input).sendKeys(keyword.toString());
+        await browser.element(po.Search_Button).click();
     };
 
-    po.signInOptionDisplayed = function () {
-        return browser.element(po.Sign_In_Option).isDisplayed();
+    po.signInOptionDisplayed = async () => {
+        return await browser.element(po.Sign_In_Option).isDisplayed();
     }
 };
 
